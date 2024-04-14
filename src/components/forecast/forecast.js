@@ -40,8 +40,8 @@ const Forecast = ({ data }) => {
                   {" "}
                   {forecastDays[idx]}
                 </label>
-                <label className="ml-auto">{item.weather[0].description}</label>
-                <label className="text-gray-600">
+                <label className="ml-auto hidden md:block">{item.weather[0].description}</label>
+                <label className="text-gray-600 hidden md:block">
                   {Math.round(item.main.temp_min)}°C /{" "}
                   {Math.round(item.main.temp_max)}°C{" "}
                 </label>
