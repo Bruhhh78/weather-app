@@ -1,25 +1,33 @@
 import React from "react";
-import "./current-weather.css";
 
-const CurrentWeather = ({data}) => {
+const CurrentWeather = ({ data }) => {
   return (
-    <div className="weather">
-      <div className="top">
+   <div className="p-5">
+     <div className="weather bg-gray-500 text-white rounded-lg shadow-lg p-4">
+      <div className="top flex justify-between items-center">
         <div>
-          <p className="city">{data.city}</p>
+          <p className="city font-semibold text-lg">{data.city}</p>
           <p className="weather-description">{data.weather[0].description}</p>
         </div>
-        <img alt="weather" className="weather-icon" src={`icons/${data.weather[0].icon}.png`}/>
+        <img
+          alt="weather"
+          className="weather-icon"
+          src={`icons/${data.weather[0].icon}.png`}
+        />
       </div>
-      <div className="bottom">
-        <p className="temperature">{Math.round(data.main.temp)}°C</p>
-        <div className="details">
+      <div className="bottom flex justify-between items-center mt-4">
+        <p className="temperature text-5xl font-semibold">
+          {Math.round(data.main.temp)}°C
+        </p>
+        <div className="details ml-4">
           <div className="parameter-row">
             <span className="parameter-label">Details</span>
           </div>
           <div className="parameter-row">
             <span className="parameter-label">Feels like</span>
-            <span className="parameter-value">{Math.round(data.main.feels_like)}°C</span>
+            <span className="parameter-value">
+              {Math.round(data.main.feels_like)}°C
+            </span>
           </div>
           <div className="parameter-row">
             <span className="parameter-label">Wind</span>
@@ -36,6 +44,7 @@ const CurrentWeather = ({data}) => {
         </div>
       </div>
     </div>
+   </div>
   );
 };
 
